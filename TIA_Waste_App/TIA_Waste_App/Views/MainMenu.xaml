@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TIA_Waste_App.MainMenu">
+
+    <StackLayout x:Name="Menu">
+        <StackLayout x:Name="MenuStack" VerticalOptions="FillAndExpand">
+            <Image x:Name="LoginIcon" Source="TIA_Logo.png" Margin="0,80,0,0"/>
+        </StackLayout>
+
+        <StackLayout x:Name="LoginEntriesStack" VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>40, 0, 40, 0</OnIdiom.Phone>
+                    <OnIdiom.Tablet>140, 150, 140, 0</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+
+            <Button Text="Log Out" Clicked="LogOut"></Button>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
