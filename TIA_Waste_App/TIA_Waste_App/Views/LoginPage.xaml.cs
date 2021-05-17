@@ -30,18 +30,19 @@ namespace TIA_Waste_App.Views
             Entry_Password.Completed += (s, e) => SignInProcedure(s, e);
         }
 
-        async void SignInProcedure(object sender, EventArgs e)
+         void SignInProcedure(object sender, EventArgs e)
         {
-            //User user = new User(Entry_Username.Text, Entry_Password.Text);
-            //if (user.CheckInformation())
-            //{
-            //   await DisplayAlert("Login", "Login Success!", "Ok");
-            //}
-            //else
-            //{
-            //   await DisplayAlert("Login", "Login Failure!", "Ok");
-            //}
-            await Navigation.PushAsync(new MainMenu());
+            User user = new User(Entry_Username.Text, Entry_Password.Text);
+            if (user.CheckInformation())
+            {
+                 DisplayAlert("Login", "Login Success!", "Ok");
+                App.UserDatabase.SaveUser(user);
+            }
+            else
+            {
+                 DisplayAlert("Login", "Login Failure!", "Ok");
+            }
+
         }
     }
 }

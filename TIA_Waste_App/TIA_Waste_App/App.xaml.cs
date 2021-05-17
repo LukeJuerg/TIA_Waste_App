@@ -1,4 +1,5 @@
 ﻿using System;
+using TIA_Waste_App.Data;
 using TIA_Waste_App.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -7,12 +8,14 @@ namespace TIA_Waste_App
 {
     public partial class App : Application
     {
+        static TokenDatabaseController tokenDatabase;
+        static UserDatabaseController userDatabase;
         public App()
         {
             InitializeComponent();
 
             MainPage = new LoginPage();
-            MainPage = new MainMenu();
+            
         }
 
         protected override void OnStart()
@@ -25,6 +28,30 @@ namespace TIA_Waste_App
 
         protected override void OnResume()
         {
+        }
+
+        public static UserDatabaseController UserDatabase
+        {
+            get
+            {
+                if(userDatabase == null)
+                {
+                    userDatabase = new UserDatabaseController();
+                }
+                return userDatabase;
+            }
+        }
+
+        public static TokenDatabaseController TokenDatabase
+        {
+            get
+            {
+                if (tokenDatabase == null)
+                {
+                    tokenDatabase = new TokenDatabaseController();
+                }
+                return tokenDatabase;
+            }
         }
     }
 }
