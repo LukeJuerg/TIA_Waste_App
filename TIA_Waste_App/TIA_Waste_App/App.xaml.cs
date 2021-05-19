@@ -10,6 +10,7 @@ namespace TIA_Waste_App
     {
         static TokenDatabaseController tokenDatabase;
         static UserDatabaseController userDatabase;
+        static RestService restService;
         public App()
         {
             InitializeComponent();
@@ -51,6 +52,18 @@ namespace TIA_Waste_App
                     tokenDatabase = new TokenDatabaseController();
                 }
                 return tokenDatabase;
+            }
+        }
+
+        public static RestService RestService
+        {
+            get
+            {
+                if(restService == null)
+                {
+                    restService = new RestService();
+                }
+                return restService;
             }
         }
     }
