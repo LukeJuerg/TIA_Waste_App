@@ -18,6 +18,9 @@ namespace TIA_Waste_App
         private static bool hasInternet;
         private static Page currentpage;
         private static Timer timer;
+
+        
+
         private static bool noInterShow;
 
         public App()

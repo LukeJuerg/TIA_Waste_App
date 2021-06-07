@@ -7,9 +7,22 @@
 
             <StackLayout x:Name="LogoStack" >
                 <Label x:Name="lbl_NoInternet" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="Red"/>
+                
             </StackLayout>
+            
             <Label Text="Welcome" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <Button Text="View Account" Clicked="AccountInfo" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <StackLayout x:Name="Buttons" >
+                <Button Text="View Account" Clicked="AccountInfo" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button Text="Scan an Image" Clicked="CaptureImage" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout x:Name="image" Margin="80" TranslationY="-50">
+                <Image x:Name="resultImage"/>
+                <Button Text="Submit" Clicked="SubmitPicture" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </StackLayout>
+
+            
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
