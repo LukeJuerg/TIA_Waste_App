@@ -18,6 +18,7 @@
 
             <StackLayout x:Name="image" Margin="80" TranslationY="-50">
                 <Image x:Name="resultImage"/>
+                <Label x:Name="LocalPathLabel" TextColor="Red"></Label>
                 <Button Text="Submit" Clicked="SubmitPicture" HorizontalOptions="Center" VerticalOptions="Center"/>
             </StackLayout>
 

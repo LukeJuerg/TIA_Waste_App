@@ -32,7 +32,8 @@ namespace TIA_Waste_App.Views.Menu
             await CrossShare.Current.OpenBrowser("https://youtu.be/Y8qtmD_QTYw"); // link to website >> http://13.93.71.77/
         }
 
-        async void CaptureImage(object sender, EventArgs e)
+        public string FilePath;
+        public async void CaptureImage(object sender, EventArgs e)
         {
             var CapturedImage = await MediaPicker.CapturePhotoAsync();
             if (CapturedImage != null)
@@ -41,11 +42,15 @@ namespace TIA_Waste_App.Views.Menu
 
                 resultImage.Source = ImageSource.FromStream(() => stream);
             }
+
+            LocalPathLabel.Text = CapturedImage.FileName.ToString();
+
+            FilePath = CapturedImage.FileName.ToString();
         }
 
          void SubmitPicture(object sender, EventArgs e)
         {
-            
+            DisplayAlert("File Name", FilePath, "Ok");
         }
     }
 }
